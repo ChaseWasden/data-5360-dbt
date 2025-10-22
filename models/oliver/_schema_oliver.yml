@@ -13,3 +13,10 @@ models:
     description: "oliver store Dimension"
   - name: fact_sales
     description: "oliver sales Fact"
+  - name: stg_employee_certifications
+    description: "Staging view of employee certification events from oliver_landing.employee_certifications. 
+                  Parses JSON field `certification_json` into columns and standardizes types."
+  - name: fact_certification
+    description: "Fact table at the grain of **one row per (employee_key, date_key, certification_name)**.
+                  Stores employee certification events with their monetary cost, linked to dim_employee
+                  and dim_date for conformed reporting.
