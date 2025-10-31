@@ -1,0 +1,14 @@
+version: 2
+
+
+sources:
+  - name: transaction_db
+    database: group5_ecoessentials
+    schema: POSTGRES_RDS_TRANSACTIONAL_DB
+    tables:
+      - name: customer
+      - name: orders
+      - name: order_line
+      - name: product
+      - name: promotional_campaign
+
