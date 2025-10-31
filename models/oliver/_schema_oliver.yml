@@ -1,22 +1,22 @@
-version: 2
+# version: 2
 
-models:
-  - name: oliver_dim_customer
-    description: "oliver customer Dimension"
-  - name: oliver_dim_date
-    description: "oliver date Dimension"
-  - name: oliver_dim_employee
-    description: "oliver employee Dimension"
-  - name: oliver_dim_product
-    description: "oliver product Dimension"
-  - name: oliver_dim_store
-    description: "oliver store Dimension"
-  - name: fact_sales
-    description: "oliver sales Fact"
-  - name: stg_employee_certifications
-    description: "Staging view of employee certification events from oliver_landing.employee_certifications. 
-                  Parses JSON field `certification_json` into columns and standardizes types."
-  - name: fact_certification
-    description: "Fact table at the grain of **one row per (employee_key, date_key, certification_name)**.
-                  Stores employee certification events with their monetary cost, linked to dim_employee
-                  and dim_date for conformed reporting.
+# models:
+#   - name: oliver_dim_customer
+#     description: "oliver customer Dimension"
+#   - name: oliver_dim_date
+#     description: "oliver date Dimension"
+#   - name: oliver_dim_employee
+#     description: "oliver employee Dimension"
+#   - name: oliver_dim_product
+#     description: "oliver product Dimension"
+#   - name: oliver_dim_store
+#     description: "oliver store Dimension"
+#   - name: fact_sales
+#     description: "oliver sales Fact"
+#   - name: stg_employee_certifications
+#     description: "Staging view of employee certification events from oliver_landing.employee_certifications. 
+#                   Parses JSON field `certification_json` into columns and standardizes types."
+#   - name: fact_certification
+#     description: "Fact table at the grain of **one row per (employee_key, date_key, certification_name)**.
+#                   Stores employee certification events with their monetary cost, linked to dim_employee
+#                   and dim_date for conformed reporting
