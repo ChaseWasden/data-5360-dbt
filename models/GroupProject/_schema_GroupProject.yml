@@ -1,0 +1,24 @@
+version: 2
+
+
+models:
+  - name: dim_product
+    description: "Sales product dimension"
+  - name: dim_subscriber
+    description: "Email subscriber dimension"
+  - name: dim_event_type
+    description: "Email event type dimension"
+  - name: dim_time
+    description: "A time dimension that shows the hour, minute, and second"
+  - name: dim_email
+    description: "An email dimension that shows the email name and send time"
+  - name: dim_date
+    description: "Sales date dimension"
+  - name: dim_campaign
+    description: "A dimension table providing details on marketing campaigns"
+  - name: dim_customer
+    description: "Customer dimension"
+  - name: fact_sales
+    description: "Facts table for sales process"
+  - name: fact_email_event
+    description: "A fact table tracking email events like clicks, blocks, and unsubscribe"
