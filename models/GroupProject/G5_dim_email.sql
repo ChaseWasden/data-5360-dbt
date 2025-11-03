@@ -1,3 +1,5 @@
+{% raw %}
+
 {{ config(
 	database='GROUP5_ECOESSENTIALS',
     materialized='table',
@@ -11,3 +13,4 @@ SELECT DISTINCT
     sendtimestamp AS send_time_stamp
 FROM
     {{ source('email_events', 'ecoessential_email_events') }}
+{% endraw %}

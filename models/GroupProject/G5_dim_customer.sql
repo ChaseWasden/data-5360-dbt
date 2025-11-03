@@ -1,3 +1,5 @@
+
+{% raw %}
 {{ config(
     database='GROUP5_ECOESSENTIALS',
     materialized = 'table',
@@ -17,3 +19,4 @@ customer_city,
 customer_state,
 customer_zip
 FROM {{ source('transaction_db', 'customer') }}
+{% endraw %}

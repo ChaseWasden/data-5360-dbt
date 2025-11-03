@@ -1,3 +1,5 @@
+{% raw %}
+
 {{ config(
 	database='GROUP5_ECOESSENTIALS',
     materialized='table',
@@ -12,3 +14,4 @@ SELECT DISTINCT
     subscriberlastname AS subscriber_last_name
 FROM
     {{ source('email_events', 'ecoessential_email_events') }}
+{% endraw %}

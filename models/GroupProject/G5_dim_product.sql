@@ -1,3 +1,5 @@
+{% raw %}
+
 {{ config(
     database='GROUP5_ECOESSENTIALS',
     materialized = 'table',
@@ -16,3 +18,4 @@ SELECT
     price
 FROM
     {{ source('transaction_db', 'product') }}
+{% endraw %}

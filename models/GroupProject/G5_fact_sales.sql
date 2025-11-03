@@ -1,3 +1,4 @@
+{#
 {{ config(
     database='GROUP5_ECOESSENTIALS',
     materialized = 'table',
@@ -31,3 +32,4 @@ INNER JOIN {{ ref('G5_dim_product') }} prod
 
 INNER JOIN {{ ref('G5_dim_date') }} d 
     ON d.date_day = DATE(o.ORDER_TIMESTAMP)
+#}
