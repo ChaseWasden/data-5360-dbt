@@ -1,9 +1,9 @@
-version: 2
+# version: 2
 
 
-sources:
-  - name: email_events
-    database: group5_ecoessentials
-    schema: S3
-    tables:
-      - name: ecoessential_email_events
+# sources:
+#   - name: email_events
+#     database: group5_ecoessentials
+#     schema: S3
+#     tables:
+#       - name: ecoessential_email_events

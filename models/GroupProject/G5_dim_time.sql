@@ -1,3 +1,4 @@
+{% raw %}
 {{ config(
     database='GROUP5_ECOESSENTIALS',
     materialized='table',
@@ -19,3 +20,4 @@ SELECT DISTINCT
     EXTRACT(SECOND FROM eventtimestamp) AS second
 FROM
     {{ source('email_events', 'ecoessential_email_events') }}
+{% endraw %}
