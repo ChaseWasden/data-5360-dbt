@@ -1,4 +1,4 @@
-{#
+
 {{ config(
     database='GROUP5_ECOESSENTIALS',
     materialized = 'table',
@@ -22,7 +22,7 @@ INNER JOIN {{ source('transaction_db', 'orders') }} o
     ON ol.ORDER_ID = o.ORDER_ID
 
 INNER JOIN {{ ref('G5_dim_customer') }} cust 
-    ON o.CUSTOMER_ID = cust.customer_id
+    ON o.CUSTOMER_ID = cust.customer_ID
     
 INNER JOIN {{ ref('G5_dim_campaign') }} camp 
     ON ol.CAMPAIGN_ID = camp.campaign_id
@@ -32,4 +32,3 @@ INNER JOIN {{ ref('G5_dim_product') }} prod
 
 INNER JOIN {{ ref('G5_dim_date') }} d 
     ON d.date_day = DATE(o.ORDER_TIMESTAMP)
-#}

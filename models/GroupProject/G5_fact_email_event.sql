@@ -1,4 +1,3 @@
-{#
 {{ config(
     database='GROUP5_ECOESSENTIALS',
     materialized = 'table',
@@ -25,4 +24,3 @@ INNER JOIN {{ ref("G5_dim_campaign")}} cam on cam.campaign_id = events.campaigni
 INNER JOIN {{ ref("G5_dim_email")}} em on em.email_id = events.emailid
 INNER JOIN {{ ref('G5_dim_date') }} d ON d.date_day = DATE(events.eventtimestamp)
 INNER JOIN {{ ref('G5_dim_time') }} t ON TO_TIME(LPAD(t.time_key::TEXT, 6, '0'), 'HH24MISS') = TO_TIME(events.eventtimestamp)
-#}

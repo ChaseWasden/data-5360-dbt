@@ -1,4 +1,3 @@
-{% raw %}
 
 {{ config(
     database='GROUP5_ECOESSENTIALS',
@@ -12,4 +11,3 @@ SELECT DISTINCT
     eventtype AS event_type
 FROM
     {{ source('email_events', 'ecoessential_email_events') }}
-{% endraw %}
