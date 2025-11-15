@@ -1,24 +1,84 @@
-# version: 2
+version: 2
 
 
-# models:
-#   - name: dim_product
-#     description: "Sales product dimension"
-#   - name: dim_subscriber
-#     description: "Email subscriber dimension"
-#   - name: dim_event_type
-#     description: "Email event type dimension"
-#   - name: dim_time
-#     description: "A time dimension that shows the hour, minute, and second"
-#   - name: dim_email
-#     description: "An email dimension that shows the email name and send time"
-#   - name: dim_date
-#     description: "Sales date dimension"
-#   - name: dim_campaign
-#     description: "A dimension table providing details on marketing campaigns"
-#   - name: dim_customer
-#     description: "Customer dimension"
-#   - name: fact_sales
-#     description: "Facts table for sales process"
-#   - name: fact_email_event
-#     description: "A fact table tracking email events like clicks, blocks, and unsubscribe"
+models:
+  - name: G5_dim_product
+    description: "Sales product dimension"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+  - name: G5_dim_subscriber
+    description: "Email subscriber dimension"
+    columns:
+      - name: subscriber_key
+        tests:
+          - unique
+  - name: G5_dim_event_type
+    description: "Email event type dimension"
+    columns:
+      - name: event_type
+        tests:
+          - accepted_values:
+              values:
+                - "CLICK"
+                - "SENT"
+                - "OPEN"
+  - name: G5_dim_time
+    description: "A time dimension that shows the hour, minute, and second"
+    columns:
+      - name: time_key
+        tests:
+          - not_null
+  - name: G5_dim_email
+    description: "An email dimension that shows the email name and send time"
+    columns:
+      - name: email_key
+        tests:
+          - unique
+  - name: G5_dim_date
+    description: "Sales date dimension"
+    columns:
+      - name: date_key
+        tests:
+          - not_null
+  - name: G5_dim_campaign
+    description: "A dimension table providing details on marketing campaigns"
+    columns:
+      - name: campaign_key
+        tests:
+          - unique
+  - name: G5_dim_customer
+    description: "Customer dimension"    
+    columns:
+      - name: customer_key
+        tests:
+          - not_null
+  - name: G5_fact_sales
+    description: "Facts table for sales process"
+    columns:
+        - name: customer_key
+          tests:
+            - relationships:
+                to: ref('G5_dim_customer')
+                field: customer_key
+        - name: campaign_key
+          tests:
+            - relationships:
+                to: ref('G5_dim_campaign')
+                field: campaign_key
+        - name: product_key
+          tests:
+            - relationships:
+                to: ref('G5_dim_product')
+                field: product_key
+
+  - name: G5_fact_email_event
+    description: "A fact table tracking email events like clicks, blocks, and unsubscribe"
+    columns:
+      - name: date_key
+        tests:
+          - relationships:
+              to: ref('G5_dim_date')
+              field: date_key
+

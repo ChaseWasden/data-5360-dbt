@@ -1,4 +1,3 @@
-{% raw %}
 
 {{ config(
     database='GROUP5_ECOESSENTIALS',
@@ -18,4 +17,3 @@ SELECT
     price
 FROM
     {{ source('transaction_db', 'product') }}
-{% endraw %}

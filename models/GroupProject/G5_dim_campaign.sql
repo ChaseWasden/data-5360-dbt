@@ -1,4 +1,4 @@
-{% raw %}
+
 
 {{ config(
     database='GROUP5_ECOESSENTIALS',
@@ -13,4 +13,3 @@ SELECT
     campaign_discount
 FROM
     {{ source('transaction_db', 'promotional_campaign') }}
-{% endraw %}

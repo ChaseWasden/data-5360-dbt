@@ -1,4 +1,3 @@
-{% raw %}
 
 {{ config(
     database='GROUP5_ECOESSENTIALS',
@@ -22,4 +21,4 @@ month_name,
 quarter_of_year,
 year_number
 from cte_date
-{% endraw %}
+
